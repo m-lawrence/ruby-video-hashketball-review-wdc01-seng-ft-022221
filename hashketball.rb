@@ -252,4 +252,14 @@ end
 
 def player_with_longest_name
   long_name = 0 
+  long_name_winner = nil
+  game_hash.map do |location, team_stats|
+    team_stats[:players].map do |index|
+      if long_name <= index[:player_name].count
+        long_name = index[:player_name].count
+        long_name_winner = index[:player_name]
+  end
+  end
+  end
+  long_name_winner
 end
