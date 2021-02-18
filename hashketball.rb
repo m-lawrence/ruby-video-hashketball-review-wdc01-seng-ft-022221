@@ -231,12 +231,12 @@ end
 
 def away_sum 
   away_team = teams("Charlotte Hornets")
-  home_team_points = []
+  away_team_points = []
   sum = 0
-  home_team[:players].map do |index|
-      home_team_points << index[:points]
+  away_team[:players].map do |index|
+      away_team_points << index[:points]
     end
-    home_team_points.map do |nums|
+    away_team_points.map do |nums|
       sum += nums
     end
     sum
