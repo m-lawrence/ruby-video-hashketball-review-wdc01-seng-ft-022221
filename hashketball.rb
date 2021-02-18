@@ -229,6 +229,19 @@ def home_sum
     sum
 end
 
+def away_sum 
+  home_team = teams("Brooklyn Nets")
+  home_team_points = []
+  sum = 0
+  home_team[:players].map do |index|
+      home_team_points << index[:points]
+    end
+    home_team_points.map do |nums|
+      sum += nums
+    end
+    sum
+end
+
 def winning_team
   home_team = teams("Brooklyn Nets")
   home_team_points = []
