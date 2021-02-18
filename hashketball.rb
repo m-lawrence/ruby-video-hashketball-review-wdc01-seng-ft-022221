@@ -243,23 +243,9 @@ def away_sum
 end
 
 def winning_team
-  home_team = teams("Brooklyn Nets")
-  home_team_points = []
-  away_team = teams("Charlotte Hornets")
-  away_team_points = []
-    home_team[:players].map do |index|
-      home_team_points << index[:points]
-      home_team_points_sum = 0 
-      home_team_points.each { |a| home_team_points_sum += a }
-    end
-    away_team[:players].map do |index|
-      away_team_points << index[:points]
-      away_team_points_sum = 0 
-      away_team_points.each { |a| away_team_points_sum += a }
-    end
-    if home_team_points_sum > away_team_points_sum
-      return home_team
-      elsif away_team_points_sum > home_team_points_sum
-      return away_team
-    end
+  if home_sum > away_sum
+    return game_hash[:home][:team_name]
+  elsif away_sum > home_sum
+    return game_hash[:away][:team_name]
+  end
 end
