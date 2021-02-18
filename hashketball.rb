@@ -269,8 +269,8 @@ def most_steals
   biggest_stealer = nil
   game_hash.map do |location, team_stats|
     team_stats[:players].map do |index|
-      if highest_points <= index[:steals]
-        highest_points = index[:steals]
+      if highest_steals <= index[:steals]
+        highest_steals = index[:steals]
         biggest_stealer = index[:player_name]
       end
     end 
